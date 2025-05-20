@@ -1,6 +1,6 @@
-package GestioneEventi.dao;
+package gestioneeventi.dao;
 
-import GestioneEventi.model.Evento;
+import gestioneeventi.model.Evento;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 

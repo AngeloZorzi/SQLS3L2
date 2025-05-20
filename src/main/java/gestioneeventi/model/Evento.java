@@ -1,4 +1,4 @@
-package GestioneEventi.model;
+package gestioneeventi.model;
 
 import jakarta.persistence.*;
 
@@ -19,13 +19,23 @@ public class Evento {
     public Evento() {}
 
     public Evento(Long id, String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
-        this.id = id;
+        this.id = generaIdCasuale();
         this.titolo = titolo;
         this.dataEvento = dataEvento;
         this.descrizione = descrizione;
         this.tipoEvento = tipoEvento;
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
+
+    public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
+        this.id = generaIdCasuale(); // Genera ID random per ora
+        this.titolo = titolo;
+        this.dataEvento = dataEvento;
+        this.descrizione = descrizione;
+        this.tipoEvento = tipoEvento;
+        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+    }
+
     private Long generaIdCasuale() {
         Random rand = new Random();
         return 1000L + rand.nextInt(9000);
